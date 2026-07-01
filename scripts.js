@@ -22,36 +22,51 @@ function handleFormSubmit(event) {
     timestamp: new Date().toISOString()
   };
 
-  try {
-    const existing = JSON.parse(localStorage.getItem("as_hvac_requests") || "[]");
-    existing.push(formData);
-    localStorage.setItem("as_hvac_requests", JSON.stringify(existing));
-    statusEl.textContent = "Your request has been saved in this browser so you can reference it later.";
-    statusEl.classList.add("success");
-    event.target.reset();
-  } catch (e) {
-    statusEl.textContent = "Unable to save your request locally. You can still call directly at (973) 589‑6304.";
-    statusEl.classList.add("error");
-  }
+  const endpoint = "https://example.com/api/contact";
+
+  fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      statusEl.textContent = "Your request has been submitted. We will follow up shortly.";
+      statusEl.classList.add("success");
+      event.target.reset();
+    })
+    .catch(() => {
+      statusEl.textContent = "Unable to submit your request to the service. Please call (973) 589‑6304 directly.";
+      statusEl.classList.add("error");
+    });
 }
 
 function initPage() {
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  const callButton = document.querySelector('.btn-call');
   const scheduleButton = document.querySelector('.btn-schedule');
+  const estimateButton = document.querySelector('.btn-estimate');
+  const emergencyButton = document.querySelector('.btn-emergency');
   const requestServiceButton = document.getElementById('requestServiceButton');
   const contactForm = document.getElementById('contactForm');
   const btn = document.querySelector('.mobile-nav-toggle');
   const header = document.querySelector('header');
   const nav = document.getElementById('navlinks');
 
-  if (callButton) {
-    callButton.addEventListener('click', openWhatsApp);
-  }
-
   if (scheduleButton) {
     scheduleButton.addEventListener('click', () => scrollToSection('contact'));
+  }
+
+  if (estimateButton) {
+    estimateButton.addEventListener('click', () => scrollToSection('contact'));
+  }
+
+  if (emergencyButton) {
+    emergencyButton.addEventListener('click', openWhatsApp);
   }
 
   if (requestServiceButton) {
