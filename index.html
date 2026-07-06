@@ -198,63 +198,64 @@
     </div>
   </section>
 
-  <!-- AI Advisor -->
-  <section id="ai" class="ai-section section-alt">
-    <div class="section-inner">
-      <header class="section-header">
-        <div class="section-kicker">Chat with an Advisor</div>
-        <h2 class="section-title">Ask about HVAC, home tips, or everyday questions</h2>
-        <p class="section-subtitle">Get helpful answers on heating and cooling, home maintenance, local guidance, or broader general topics.</p>
-      </header>
+<!-- AI Advisor -->
+<section id="ai" class="ai-section section-alt">
+  <div class="section-inner">
+    <header class="section-header">
+      <div class="section-kicker">Chat with an Advisor</div>
+      <h2 class="section-title">Ask about HVAC, home tips, or everyday questions</h2>
+      <p class="section-subtitle">Get helpful answers on heating and cooling, home maintenance, and more.</p>
+    </header>
 
-      <div class="ai-grid">
-        <div class="ai-chat-card">
-          <div class="ai-chat-top">
-            <div>
-              <div class="ai-chat-label">AI Advisor</div>
-              <div class="ai-chat-note">Instant answers for HVAC decisions</div>
-            </div>
-            <div class="ai-chat-badge">Live</div>
+    <div class="ai-grid">
+      <div class="ai-chat-card">
+        <div class="ai-chat-top">
+          <div>
+            <div class="ai-chat-label">AI Advisor</div>
+            <div class="ai-chat-note">Instant answers for HVAC decisions</div>
           </div>
-          <div class="ai-chat-window" id="aiChatWindow">
-            <div class="ai-message ai-message-bot">Hello! I’m your AI assistant. Ask me anything—from HVAC questions to home advice and general topics.</div>
-          </div>
-          <div class="ai-chat-input-row">
-            <input id="aiInput" class="ai-chat-input" type="text" placeholder="Ask me anything..." aria-label="Ask the AI advisor" />
-            <button id="aiSendButton" class="btn-primary" type="button">Send</button>
-          </div>
-          <div class="ai-chat-actions">
-            <label class="ai-reasoning-toggle"><input type="checkbox" id="aiReasoningToggle" checked> Show reasoning</label>
-            <div class="ai-quick-actions">
-              <button class="btn-outline" id="aiActionSchedule" type="button">Schedule inspection</button>
-              <button class="btn-outline" id="aiActionEstimate" type="button">Get estimate</button>
-              <button class="btn-outline" id="aiActionFinancing" type="button">See financing</button>
-            </div>
-            <div class="ai-small-actions">
-              <button class="btn-secondary btn-estimate" type="button" id="askAiQuickButton">Try a sample question</button>
-              <button class="btn-primary btn-schedule" id="talkAdvisorButton" type="button">Talk to an Advisor</button>
-            </div>
-          </div>
+          <div class="ai-chat-badge">Live</div>
         </div>
 
-        <div class="ai-features">
-          <article class="feature-card">
-            <h3>Repair vs replace</h3>
-            <p>Understand the best path for your system and budget.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Estimate ready</h3>
-            <p>Know what to expect before the first technician arrives.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Trusted network</h3>
-            <p>We match you with local pros who know Newark and area systems.</p>
-          </article>
+        <!-- Working AI Chat -->
+        <div id="ai-chat" style="max-width:350px;padding:20px;border:1px solid #ccc;border-radius:10px;">
+          <div id="ai-log" style="height:200px;overflow-y:auto;border:1px solid #ddd;padding:10px;margin-bottom:10px;">
+            Ask me anything about HVAC.
+          </div>
+          <input id="ai-input" type="text" placeholder="Type your question..." style="width:100%;padding:8px;">
+          <button onclick="sendAI()" style="margin-top:10px;width:100%;">Ask</button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
+<script>
+async function sendAI() {
+    const input = document.getElementById("ai-input").value;
+    const log = document.getElementById("ai-log");
+
+    log.innerHTML += `<div><b>You:</b> ${input}</div>`;
+
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YOUR_API_KEY"
+        },
+        body: JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [
+                { role: "system", content: "You are an HVAC expert assistant." },
+                { role: "user", content: input }
+            ]
+        })
+    });
+
+    const data = await response.json();
+    const aiText = data.choices[0].message.content;
+
+    log.innerHTML += `<div><b>
   <!-- Services -->
   <section id="services">
     <div class="section-inner">
