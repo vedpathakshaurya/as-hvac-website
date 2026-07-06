@@ -14,6 +14,11 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <!-- Header / Navigation -->
   <header>
+    <div class="top-banner">
+      <span class="banner-tag">NEW</span>
+      <span>Get Your New HVAC System Today with Flexible Financing Options.</span>
+      <a href="#financing">Learn more</a>
+    </div>
     <div class="nav">
       <div class="logo">
         <div class="logo-mark">A&amp;S</div>
@@ -24,12 +29,12 @@
       </div>
       <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="navlinks" aria-label="Toggle navigation">☰</button>
       <nav id="navlinks" class="nav-links">
-        <a href="#main">Home</a>
-        <a href="#services">Services</a>
-        <a href="#why">Why choose us</a>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+        <a href="#replacement">Replace my HVAC</a>
+        <a href="#services">Repair my HVAC</a>
+        <a href="#financing">Financing</a>
+        <a href="#calculators">Calculators</a>
+        <a href="#about">Learn about HVAC</a>
+        <button class="nav-cta nav-cta-outline" id="askAiButton" type="button">Ask AI</button>
         <button class="nav-cta" id="requestServiceButton" type="button">Request Service</button>
       </nav>
     </div>
@@ -50,14 +55,19 @@
         </p>
         <div class="hero-actions">
           <button class="btn-primary btn-schedule" type="button">
-            Schedule Service
+            Replace my HVAC
           </button>
           <button class="btn-secondary btn-estimate" type="button">
-            Request Estimate
+            Repair my HVAC
           </button>
           <button class="btn-tertiary btn-emergency" type="button">
             Emergency Heat Call
           </button>
+        </div>
+        <div class="hero-highlight-bar">
+          <a href="#ai" class="btn-outline hero-highlight-btn" id="heroAskAiButton">
+            Chat with our AI advisor for fast HVAC guidance
+          </a>
         </div>
         <div class="hero-meta">
           <span>
@@ -102,6 +112,146 @@
           contractor you call because you want the job done properly the first time.
         </p>
       </aside>
+    </div>
+  </section>
+
+  <!-- Replacement / Compare (inspired layout) -->
+  <section id="replacement" class="replacement-section">
+    <div class="section-inner">
+      <header class="section-header">
+        <div class="section-kicker">Replacement made simple</div>
+        <h2 class="section-title">A refreshingly different way to replace your HVAC</h2>
+        <p class="section-subtitle">We focus on transparent guidance and practical options so you can choose what fits your home and budget.</p>
+      </header>
+
+      <div class="replacement-grid">
+        <div class="replacement-steps">
+          <ol>
+            <li><strong>Free estimate:</strong> We assess your needs and recommend practical options.</li>
+            <li><strong>Compare options:</strong> Honest trade-offs between repair, replace, and efficiency upgrades.</li>
+            <li><strong>Hassle-free install:</strong> Professional scheduling and careful post-install walkthrough.</li>
+          </ol>
+          <div class="replacement-actions">
+            <button class="btn-primary btn-schedule">Schedule Service</button>
+            <button class="btn-secondary btn-estimate">Request Estimate</button>
+          </div>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare-card">
+            <h3>Repair</h3>
+            <p>Lower upfront cost for targeted fixes when systems have remaining life.</p>
+            <ul>
+              <li>Fast response</li>
+              <li>Cost-effective short term</li>
+              <li>Good for recent systems</li>
+            </ul>
+          </article>
+
+          <article class="compare-card recommended">
+            <h3>Replace</h3>
+            <p>Long-term reliability and improved efficiency—recommended when repairs are frequent.</p>
+            <ul>
+              <li>Modern efficiency</li>
+              <li>Warranty options</li>
+              <li>Lower operating cost</li>
+            </ul>
+          </article>
+
+          <article class="compare-card">
+            <h3>Maintenance</h3>
+            <p>Routine tune-ups to extend life and improve performance.</p>
+            <ul>
+              <li>Seasonal checks</li>
+              <li>Filter & airflow</li>
+              <li>Preventive care</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="financing" class="section-alt">
+    <div class="section-inner">
+      <header class="section-header">
+        <div class="section-kicker">Financing</div>
+        <h2 class="section-title">Flexible payment options for HVAC service and replacement</h2>
+        <p class="section-subtitle">
+          We help Newark customers find manageable payment plans, energy rebates, and financing that works for their home.
+        </p>
+      </header>
+      <div class="financing-grid">
+        <article class="feature-card">
+          <h3>0% interest plans</h3>
+          <p>Spread the cost of a new system over time without surprise financing fees when approved.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Affordable monthly options</h3>
+          <p>Choose a payment schedule that keeps your home comfortable and your budget in control.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Rebates and incentives</h3>
+          <p>We help identify local rebates and utility savings available for energy-efficient upgrades.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Advisor -->
+  <section id="ai" class="ai-section section-alt">
+    <div class="section-inner">
+      <header class="section-header">
+        <div class="section-kicker">Chat with an Advisor</div>
+        <h2 class="section-title">Ask about HVAC, home tips, or everyday questions</h2>
+        <p class="section-subtitle">Get helpful answers on heating and cooling, home maintenance, local guidance, or broader general topics.</p>
+      </header>
+
+      <div class="ai-grid">
+        <div class="ai-chat-card">
+          <div class="ai-chat-top">
+            <div>
+              <div class="ai-chat-label">AI Advisor</div>
+              <div class="ai-chat-note">Instant answers for HVAC decisions</div>
+            </div>
+            <div class="ai-chat-badge">Live</div>
+          </div>
+          <div class="ai-chat-window" id="aiChatWindow">
+            <div class="ai-message ai-message-bot">Hello! I’m your AI assistant. Ask me anything—from HVAC questions to home advice and general topics.</div>
+          </div>
+          <div class="ai-chat-input-row">
+            <input id="aiInput" class="ai-chat-input" type="text" placeholder="Ask me anything..." aria-label="Ask the AI advisor" />
+            <button id="aiSendButton" class="btn-primary" type="button">Send</button>
+          </div>
+          <div class="ai-chat-actions">
+            <label class="ai-reasoning-toggle"><input type="checkbox" id="aiReasoningToggle" checked> Show reasoning</label>
+            <div class="ai-quick-actions">
+              <button class="btn-outline" id="aiActionSchedule" type="button">Schedule inspection</button>
+              <button class="btn-outline" id="aiActionEstimate" type="button">Get estimate</button>
+              <button class="btn-outline" id="aiActionFinancing" type="button">See financing</button>
+            </div>
+            <div class="ai-small-actions">
+              <button class="btn-secondary btn-estimate" type="button" id="askAiQuickButton">Try a sample question</button>
+              <button class="btn-primary btn-schedule" id="talkAdvisorButton" type="button">Talk to an Advisor</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-features">
+          <article class="feature-card">
+            <h3>Repair vs replace</h3>
+            <p>Understand the best path for your system and budget.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Estimate ready</h3>
+            <p>Know what to expect before the first technician arrives.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Trusted network</h3>
+            <p>We match you with local pros who know Newark and area systems.</p>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -314,32 +464,32 @@
     </div>
   </section>
 
-  <!-- Work examples -->
-  <section id="gallery">
+  <!-- Calculators -->
+  <section id="calculators">
     <div class="section-inner">
       <header class="section-header">
-        <div class="section-kicker">Work examples</div>
-        <h2 class="section-title">Real service outcomes, no stock photography.</h2>
+        <div class="section-kicker">Calculators</div>
+        <h2 class="section-title">Evaluate your HVAC needs with quick guidance</h2>
         <p class="section-subtitle">
-          These examples focus on the work and the results, with clear descriptions instead of decorative images.
+          Use our simple tools and quick-read resources to decide whether repair, replacement, or efficiency upgrades are right for you.
         </p>
       </header>
 
       <div class="case-grid">
         <article class="case-card">
-          <img class="case-image" src="images/gallery-1.svg" alt="Inspection and repair" />
-          <h3>Inspection and repair</h3>
-          <p>System walkthroughs uncover the cause of heating or cooling failures, then repairs are completed with clear next steps.</p>
+          <img class="case-image" src="images/gallery-1.svg" alt="Repair or replace guidance" />
+          <h3>Repair or replace</h3>
+          <p>Not sure if repair or replacement is the better choice? Get a quick comparison to guide your next step.</p>
         </article>
         <article class="case-card">
-          <img class="case-image" src="images/gallery-2.svg" alt="Outdoor unit service" />
-          <h3>Outdoor unit service</h3>
-          <p>Outdoor equipment is cleaned, checked, and secured so it can keep performing through hot summers and cold snaps.</p>
+          <img class="case-image" src="images/gallery-2.svg" alt="System sizing guidance" />
+          <h3>System sizing</h3>
+          <p>Find the right HVAC system size for your home to avoid oversized equipment and save on utility costs.</p>
         </article>
         <article class="case-card">
-          <img class="case-image" src="images/gallery-3.svg" alt="Ductwork and efficiency" />
-          <h3>Ductwork and efficiency</h3>
-          <p>Airflow balancing, duct repairs, and filter checks improve comfort and reduce the workload on aging systems.</p>
+          <img class="case-image" src="images/gallery-3.svg" alt="Efficiency savings" />
+          <h3>SEER savings</h3>
+          <p>Estimate how a more efficient system can lower your cooling bills and improve year-round comfort.</p>
         </article>
       </div>
     </div>
@@ -462,6 +612,12 @@
       </div>
     </div>
   </footer>
+
+  <div class="sticky-estimate" role="dialog" aria-label="Quick contact">
+    <a href="https://wa.me/19735896304" target="_blank" rel="noopener noreferrer">Emergency Heat Call</a>
+    <span style="opacity:0.85;">•</span>
+    <a href="#contact" style="color:inherit; text-decoration:none;">Request Estimate</a>
+  </div>
 
   <script src="scripts.js" defer></script>
  </body>
