@@ -648,6 +648,28 @@ async function sendAI() {
     document.getElementById("ai-input").value = "";
 }
 </script>
+<section id="booking" class="section-alt">
+  <div class="section-inner">
+    <header class="section-header">
+      <div class="section-kicker">Book Now</div>
+      <h2 class="section-title">Schedule an Appointment</h2>
+      <p class="section-subtitle">Fast, reliable HVAC service — available 7 days a week.</p>
+    </header>
+
+    <form class="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-row">
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+      </div>
+      <div class="form-row">
+        <textarea name="message" placeholder="Describe your issue" required></textarea>
+      </div>
+      <button type="submit" class="button-primary">Book Appointment</button>
+    </form>
+  </div>
+</section>
 
   <script src="scripts.js" defer></script>
  </body>
