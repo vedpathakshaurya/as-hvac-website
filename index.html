@@ -619,6 +619,35 @@ async function sendAI() {
     <span style="opacity:0.85;">•</span>
     <a href="#contact" style="color:inherit; text-decoration:none;">Request Estimate</a>
   </div>
+<script>
+async function sendAI() {
+    const input = document.getElementById("ai-input").value;
+    const log = document.getElementById("ai-log");
+
+    log.innerHTML += `<div><b>You:</b> ${input}</div>`;
+
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer x-5555555555555555555555555555555"
+        },
+        body: JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [
+                { role: "system", content: "You are an HVAC expert assistant." },
+                { role: "user", content: input }
+            ]
+        })
+    });
+
+    const data = await response.json();
+    const aiText = data.choices[0].message.content;
+
+    log.innerHTML += `<div><b>AI:</b> ${aiText}</div>`;
+    document.getElementById("ai-input").value = "";
+}
+</script>
 
   <script src="scripts.js" defer></script>
  </body>
