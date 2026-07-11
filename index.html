@@ -197,64 +197,7 @@
       </div>
     </div>
   </section>
-
-<!-- AI Advisor -->
-<section id="ai" class="ai-section section-alt">
-  <div class="section-inner">
-    <header class="section-header">
-      <div class="section-kicker">Chat with an Advisor</div>
-      <h2 class="section-title">Ask about HVAC, home tips, or everyday questions</h2>
-      <p class="section-subtitle">Get helpful answers on heating and cooling, home maintenance, and more.</p>
-    </header>
-
-    <div class="ai-grid">
-      <div class="ai-chat-card">
-        <div class="ai-chat-top">
-          <div>
-            <div class="ai-chat-label">AI Advisor</div>
-            <div class="ai-chat-note">Instant answers for HVAC decisions</div>
-          </div>
-          <div class="ai-chat-badge">Live</div>
-        </div>
-
-        <!-- Working AI Chat -->
-        <div id="ai-chat" style="max-width:350px;padding:20px;border:1px solid #ccc;border-radius:10px;">
-          <div id="ai-log" style="height:200px;overflow-y:auto;border:1px solid #ddd;padding:10px;margin-bottom:10px;">
-            Ask me anything about HVAC.
-          </div>
-          <input id="ai-input" type="text" placeholder="Type your question..." style="width:100%;padding:8px;">
-          <button onclick="sendAI()" style="margin-top:10px;width:100%;">Ask</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-async function sendAI() {
-    const input = document.getElementById("ai-input").value;
-    const log = document.getElementById("ai-log");
-
-    log.innerHTML += `<div><b>You:</b> ${input}</div>`;
-
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer sk-proj-aajXDLqsyFB1H2M6oxJBNnHoC8TbpivCUM2fduipGld_k5SHleB4-1Z1"
-        },
-        body: JSON.stringify({
-            model: "gpt-4o-mini",
-            messages: [
-                { role: "system", content: "You are an HVAC expert assistant." },
-                { role: "user", content: input }
-            ]
-        })
-    });
-
-    const data = await response.json();
-    const aiText = data.choices[0].message.content;
-
+    
     log.innerHTML += `<div><b>
   <!-- Services -->
   <section id="services">
