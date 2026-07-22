@@ -170,10 +170,6 @@
   <h3>Service Areas</h3>
   <div class="services-grid">
     <div class="card">Newark, NJ</div>
-    <div class="card">East Orange, NJ</div>
-    <div class="card">Irvington, NJ</div>
-    <div class="card">Harrison, NJ</div>
-    <div class="card">Kearny, NJ</div>
   </div>
 </section>
 
@@ -197,7 +193,9 @@
     <input type="text" placeholder="Phone Number" />
     <input type="text" placeholder="Address" />
     <textarea placeholder="Describe your HVAC issue"></textarea>
-    <button>Submit Request</button>
+    <button onclick="window.location.href='mailto:yourEmail@example.com?subject=HVAC Service Request&body=Please describe your issue:'">
+      Submit Request
+    </button>
   </div>
 </section>
 
