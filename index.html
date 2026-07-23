@@ -4,117 +4,221 @@
   <meta charset="UTF-8" />
   <title>A & S Heating and Air Conditioning | Newark, NJ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A & S Heating and Air Conditioning provides HVAC repair, installation, and maintenance in Newark, NJ. Call (973) 589‑6304 for fast service.">
+  <meta name="description" content="Professional HVAC repair, installation, and maintenance in Newark, NJ. Call (973) 589‑6304 for fast service.">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: #f4f6f9; color: #222; }
+    body { background: #ffffff; color: #222; }
 
+    /* HEADER */
     header {
-      background: #0b5fa5;
-      color: #fff;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    header .top {
+      padding: 20px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #e5e5e5;
     }
-    header h1 { font-size: 28px; }
-    header .contact a { color: #ffd54f; font-weight: bold; text-decoration: none; }
+    header h1 { font-size: 26px; font-weight: bold; color: #0b5fa5; }
+    header a { color: #0b5fa5; font-weight: bold; text-decoration: none; }
 
     nav {
-      margin-top: 15px;
       display: flex;
       gap: 20px;
     }
     nav a {
-      color: #e3f2fd;
+      color: #444;
       text-decoration: none;
       font-size: 15px;
-      padding-bottom: 3px;
-      border-bottom: 2px solid transparent;
+      font-weight: bold;
     }
-    nav a:hover { border-bottom-color: #ffd54f; }
+    nav a:hover { color: #0b5fa5; }
 
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #0b5fa5, #1b88d1);
-      color: #fff;
-      padding: 80px 20px;
+      background: url('https://images.unsplash.com/photo-1581091870622-1e7a8d2f6c5c?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      padding: 120px 20px;
       text-align: center;
-      animation: fadeIn 1.5s ease;
+      color: #fff;
+      background-blend-mode: darken;
+      background-color: rgba(0,0,0,0.4);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .hero h2 {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 15px;
     }
-    .hero h2 { font-size: 36px; margin-bottom: 10px; }
-    .hero p { font-size: 18px; max-width: 600px; margin: 0 auto; }
-    .cta-btn {
-      margin-top: 20px;
-      display: inline-block;
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-buttons a {
       padding: 14px 28px;
       background: #ffd54f;
       color: #222;
-      font-weight: bold;
       border-radius: 6px;
       text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
     }
 
-    .section { padding: 50px 20px; max-width: 1100px; margin: auto; }
-    .section h3 { font-size: 26px; color: #0b5fa5; margin-bottom: 20px; }
+    /* SECTION */
+    .section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section h3 {
+      font-size: 28px;
+      color: #0b5fa5;
+      margin-bottom: 25px;
+      text-align: center;
+    }
 
+    /* SERVICE CARDS */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      gap: 25px;
     }
     .card {
       background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .card h4 { margin-bottom: 10px; color: #0b5fa5; }
-
-    .testimonial {
-      background: #fff;
-      padding: 20px;
-      border-left: 4px solid #0b5fa5;
-      margin-bottom: 20px;
-      border-radius: 6px;
-    }
-
-    .contact-form {
-      background: #fff;
       padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      border: 1px solid #e5e5e5;
+      transition: 0.2s;
+      text-align: center;
     }
-    .contact-form input, .contact-form textarea {
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+    .card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+    .card h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #0b5fa5;
+    }
+    .card p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* PRICING CALCULATOR */
+    .calculator {
+      background: #f7f9fb;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid #e5e5e5;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    .calculator select {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       margin-bottom: 15px;
       border-radius: 6px;
       border: 1px solid #ccc;
+      font-size: 16px;
     }
-    .contact-form button {
-      padding: 12px 20px;
+    .calculator button {
+      width: 100%;
+      padding: 14px;
       background: #0b5fa5;
       color: #fff;
       border: none;
       border-radius: 6px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .calculator button:hover {
+      background: #094b82;
+    }
+    #priceResult {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #0b5fa5;
+    }
+
+    /* BLOG SECTION */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .blog-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #e5e5e5;
+    }
+    .blog-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .blog-card h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #0b5fa5;
+    }
+    .blog-card p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* BOOKING FORM */
+    .contact-form {
+      background: #f7f9fb;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid #e5e5e5;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
       font-size: 16px;
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 14px;
+      background: #0b5fa5;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: bold;
       cursor: pointer;
     }
 
+    /* FOOTER */
     footer {
-      background: #e3e7ed;
+      background: #f7f9fb;
       padding: 30px;
       text-align: center;
       margin-top: 40px;
       font-size: 14px;
+      color: #555;
+      border-top: 1px solid #e5e5e5;
     }
   </style>
 </head>
@@ -122,67 +226,96 @@
 <body>
 
 <header>
-  <div class="top">
-    <h1>A & S Heating and Air Conditioning</h1>
-    <div class="contact">
-      <div>Newark, NJ</div>
-      <a href="tel:+19735896304">(973) 589‑6304</a>
-    </div>
-  </div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#areas">Service Areas</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#booking">Book Online</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <h1>A & S Heating and Air Conditioning</h1>
+  <a href="tel:+19735896304">(973) 589‑6304</a>
 </header>
 
+<nav>
+  <a href="#services">Services</a>
+  <a href="#calculator">Pricing</a>
+  <a href="#blog">Articles</a>
+  <a href="#booking">Book Online</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <section class="hero">
-  <h2>Heating & Cooling You Can Trust</h2>
-  <p>Fast, reliable HVAC repair and installation in Newark, NJ. Licensed technicians. Honest pricing.</p>
-  <a class="cta-btn" href="tel:+19735896304">Call Now: (973) 589‑6304</a>
+  <h2>Your Trusted HVAC Experts in Newark, NJ</h2>
+  <p>Fast, reliable heating and cooling service backed by honest pricing and professional technicians.</p>
+
+  <div class="hero-buttons">
+    <a href="tel:+19735896304">Call Now</a>
+    <a href="#booking">Book Online</a>
+    <a href="#services">View Services</a>
+  </div>
 </section>
 
 <section id="services" class="section">
   <h3>Our Services</h3>
   <div class="services-grid">
     <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" />
       <h4>AC Repair & Installation</h4>
-      <p>Stay cool with expert diagnostics, repairs, and new system installs.</p>
+      <p>Expert diagnostics, fast repairs, and professional AC system installation.</p>
     </div>
     <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1684/1684390.png" />
       <h4>Heating & Furnace Service</h4>
-      <p>Boilers, furnaces, heat pumps—full service and replacement.</p>
+      <p>Boilers, furnaces, heat pumps — full repair and replacement services.</p>
     </div>
     <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1684/1684380.png" />
       <h4>Emergency HVAC</h4>
       <p>Priority service for no‑heat or no‑cool emergencies.</p>
     </div>
     <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1684/1684387.png" />
       <h4>Air Quality Solutions</h4>
-      <p>Humidifiers, purifiers, filters, and duct cleaning.</p>
+      <p>Humidifiers, purifiers, filters, and duct cleaning for cleaner air.</p>
     </div>
   </div>
 </section>
 
-<section id="areas" class="section">
-  <h3>Service Areas</h3>
-  <div class="services-grid">
-    <div class="card">Newark, NJ</div>
+<section id="calculator" class="section">
+  <h3>Pricing Calculator</h3>
+  <div class="calculator">
+    <select id="serviceType">
+      <option value="100">AC Repair – $100+</option>
+      <option value="250">AC Installation – $250+</option>
+      <option value="120">Heating Repair – $120+</option>
+      <option value="300">Furnace Installation – $300+</option>
+      <option value="80">Air Quality Service – $80+</option>
+    </select>
+
+    <button onclick="calculatePrice()">Calculate Price</button>
+    <div id="priceResult"></div>
   </div>
 </section>
 
-<section id="reviews" class="section">
-  <h3>Customer Reviews</h3>
-  <div class="testimonial">
-    “Fast service and fair pricing. My AC was fixed in under an hour.” — Mike R.
-  </div>
-  <div class="testimonial">
-    “Professional and honest. Highly recommend for furnace repairs.” — Sarah L.
-  </div>
-  <div class="testimonial">
-    “They installed my new HVAC system and it works perfectly.” — Jason P.
+<script>
+function calculatePrice() {
+  const price = document.getElementById("serviceType").value;
+  document.getElementById("priceResult").innerHTML = "Estimated Cost: $" + price;
+}
+</script>
+
+<section id="blog" class="section">
+  <h3>Helpful HVAC Articles</h3>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1606166325094-8e3d6f6d8f47?auto=format&fit=crop&w=800&q=80" />
+      <h4>How to Know When Your AC Needs Repair</h4>
+      <p>Learn the top signs that your air conditioner may be failing and how to prevent costly breakdowns.</p>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1581091012184-5c8b4b7aa90e?auto=format&fit=crop&w=800&q=80" />
+      <h4>Best Ways to Improve Indoor Air Quality</h4>
+      <p>Discover how filters, purifiers, and duct cleaning can dramatically improve your home’s air.</p>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1581091870622-1e7a8d2f6c5c?auto=format&fit=crop&w=800&q=80" />
+      <h4>Should You Repair or Replace Your Furnace?</h4>
+      <p>We break down the cost differences and help you choose the best option for your home.</p>
+    </div>
   </div>
 </section>
 
