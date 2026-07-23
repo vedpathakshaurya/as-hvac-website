@@ -24,6 +24,8 @@
     nav {
       display: flex;
       gap: 20px;
+      padding: 15px 30px;
+      border-bottom: 1px solid #e5e5e5;
     }
     nav a {
       color: #444;
@@ -114,46 +116,22 @@
       line-height: 1.5;
     }
 
-    /* PRICING CALCULATOR */
-    .calculator {
-      background: #f7f9fb;
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #e5e5e5;
-      max-width: 600px;
-      margin: auto;
+    /* PRICING PREVIEW */
+    .pricing-preview {
       text-align: center;
+      margin-top: 40px;
     }
-    .calculator select {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-    .calculator button {
-      width: 100%;
-      padding: 14px;
+    .pricing-preview a {
+      padding: 14px 28px;
       background: #0b5fa5;
       color: #fff;
-      border: none;
       border-radius: 6px;
-      font-size: 18px;
+      text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
-    }
-    .calculator button:hover {
-      background: #094b82;
-    }
-    #priceResult {
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #0b5fa5;
+      font-size: 16px;
     }
 
-    /* BLOG SECTION */
+    /* BLOG PREVIEW */
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -231,11 +209,12 @@
 </header>
 
 <nav>
-  <a href="#services">Services</a>
-  <a href="#calculator">Pricing</a>
-  <a href="#blog">Articles</a>
-  <a href="#booking">Book Online</a>
-  <a href="#contact">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="blog.html">Articles</a>
+  <a href="contact.html">Contact</a>
+  <a href="booking.html">Book Online</a>
 </nav>
 
 <section class="hero">
@@ -244,8 +223,8 @@
 
   <div class="hero-buttons">
     <a href="tel:+19735896304">Call Now</a>
-    <a href="#booking">Book Online</a>
-    <a href="#services">View Services</a>
+    <a href="booking.html">Book Online</a>
+    <a href="services.html">View Services</a>
   </div>
 </section>
 
@@ -275,47 +254,31 @@
   </div>
 </section>
 
-<section id="calculator" class="section">
-  <h3>Pricing Calculator</h3>
-  <div class="calculator">
-    <select id="serviceType">
-      <option value="100">AC Repair – $100+</option>
-      <option value="250">AC Installation – $250+</option>
-      <option value="120">Heating Repair – $120+</option>
-      <option value="300">Furnace Installation – $300+</option>
-      <option value="80">Air Quality Service – $80+</option>
-    </select>
-
-    <button onclick="calculatePrice()">Calculate Price</button>
-    <div id="priceResult"></div>
+<section class="section">
+  <h3>Pricing & Cost Guide</h3>
+  <div class="pricing-preview">
+    <p>See average HVAC repair and installation costs.</p>
+    <a href="pricing.html">View Pricing</a>
   </div>
 </section>
 
-<script>
-function calculatePrice() {
-  const price = document.getElementById("serviceType").value;
-  document.getElementById("priceResult").innerHTML = "Estimated Cost: $" + price;
-}
-</script>
-
-<section id="blog" class="section">
-  <h3>Helpful HVAC Articles</h3>
+<section class="section">
+  <h3>Latest Articles</h3>
   <div class="blog-grid">
     <div class="blog-card">
       <img src="https://images.unsplash.com/photo-1606166325094-8e3d6f6d8f47?auto=format&fit=crop&w=800&q=80" />
       <h4>How to Know When Your AC Needs Repair</h4>
-      <p>Learn the top signs that your air conditioner may be failing and how to prevent costly breakdowns.</p>
+      <p>Learn the top signs that your air conditioner may be failing.</p>
     </div>
     <div class="blog-card">
       <img src="https://images.unsplash.com/photo-1581091012184-5c8b4b7aa90e?auto=format&fit=crop&w=800&q=80" />
       <h4>Best Ways to Improve Indoor Air Quality</h4>
-      <p>Discover how filters, purifiers, and duct cleaning can dramatically improve your home’s air.</p>
+      <p>Discover how filters and purifiers can improve your home’s air.</p>
     </div>
-    <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1581091870622-1e7a8d2f6c5c?auto=format&fit=crop&w=800&q=80" />
-      <h4>Should You Repair or Replace Your Furnace?</h4>
-      <p>We break down the cost differences and help you choose the best option for your home.</p>
-    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="blog.html" style="color:#0b5fa5; font-weight:bold;">View All Articles</a>
   </div>
 </section>
 
@@ -348,12 +311,6 @@ function sendSMS() {
   window.location.href = `sms:+19735896304?body=${smsBody}`;
 }
 </script>
-
-<section id="contact" class="section">
-  <h3>Contact Us</h3>
-  <p><strong>Phone:</strong> <a href="tel:+19735896304">(973) 589‑6304</a></p>
-  <p><strong>Location:</strong> Newark, NJ</p>
-</section>
 
 <footer>
   &copy; <span id="year"></span> A & S Heating and Air Conditioning — Newark, NJ — (973) 589‑6304
