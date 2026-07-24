@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Book Online | A & S Heating and Air Conditioning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #ffffff; color: #222; }
+
+    /* HEADER */
+    header {
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    header h1 { font-size: 26px; font-weight: bold; color: #0b5fa5; }
+    header a { color: #0b5fa5; font-weight: bold; text-decoration: none; }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      padding: 15px 30px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    nav a {
+      color: #444;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    nav a:hover { color: #0b5fa5; }
+
+    /* HERO */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      padding: 100px 20px;
+      text-align: center;
+      color: #fff;
+      background-blend-mode: darken;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .hero h2 {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* FORM SECTION */
+    .section {
+      padding: 60px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .section h3 {
+      font-size: 28px;
+      color: #0b5fa5;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .booking-form {
+      background: #f7f9fb;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid #e5e5e5;
+    }
+    .booking-form input,
+    .booking-form textarea,
+    .booking-form select {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .booking-form button {
+      width: 100%;
+      padding: 14px;
+      background: #0b5fa5;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #f7f9fb;
+      padding: 30px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #e5e5e5;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>A & S Heating and Air Conditioning</h1>
+  <a href="tel:+19735896304">(973) 589‑6304</a>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="blog.html">Articles</a>
+  <a href="contact.html">Contact</a>
+  <a href="booking.html">Book Online</a>
+</nav>
+
+<section class="hero">
+  <h2>Book HVAC Service Online</h2>
+</section>
+
+<section class="section">
+  <h3>Schedule Your Appointment</h3>
+
+  <div class="booking-form">
+    <select id="service">
+      <option value="AC Repair">AC Repair</option>
+      <option value="Heating Repair">Heating Repair</option>
+      <option value="Furnace Installation">Furnace Installation</option>
+      <option value="Air Quality Service">Air Quality Service</option>
+      <option value="Emergency HVAC">Emergency HVAC</option>
+    </select>
+
+    <input type="text" id="name" placeholder="Your Name" />
+    <input type="text" id="phone" placeholder="Phone Number" />
+    <input type="text" id="address" placeholder="Address" />
+    <textarea id="details" placeholder="Describe your HVAC issue"></textarea>
+
+    <button onclick="sendSMS()">Submit Request</button>
+  </div>
+</section>
+
+<script>
+function sendSMS() {
+  const service = document.getElementById('service').value;
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const address = document.getElementById('address').value;
+  const details = document.getElementById('details').value;
+
+  const smsBody =
+    `New HVAC Booking:%0A` +
+    `Service: ${service}%0A` +
+    `Name: ${name}%0A` +
+    `Phone: ${phone}%0A` +
+    `Address: ${address}%0A` +
+    `Details: ${details}`;
+
+  window.location.href = `sms:+19735896304?body=${smsBody}`;
+}
+</script>
+
+<footer>
+  &copy; <span id="year"></span> A & S Heating and Air Conditioning — Newark, NJ — (973) 589‑6304
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HVAC Pricing & Cost Guide | A & S Heating and Air Conditioning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #ffffff; color: #222; }
+
+    /* HEADER */
+    header {
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    header h1 { font-size: 26px; font-weight: bold; color: #0b5fa5; }
+    header a { color: #0b5fa5; font-weight: bold; text-decoration: none; }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      padding: 15px 30px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    nav a {
+      color: #444;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    nav a:hover { color: #0b5fa5; }
+
+    /* HERO */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      padding: 100px 20px;
+      text-align: center;
+      color: #fff;
+      background-blend-mode: darken;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .hero h2 {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section h3 {
+      font-size: 28px;
+      color: #0b5fa5;
+      margin-bottom: 20px;
+    }
+    .content {
+      line-height: 1.7;
+      color: #444;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    /* CALCULATOR */
+    .calculator {
+      background: #f7f9fb;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid #e5e5e5;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    .calculator select {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .calculator button {
+      width: 100%;
+      padding: 14px;
+      background: #0b5fa5;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #priceResult {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #0b5fa5;
+    }
+
+    /* CTA BUTTONS */
+    .cta-buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-buttons a {
+      padding: 14px 28px;
+      background: #0b5fa5;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #f7f9fb;
+      padding: 30px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #e5e5e5;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>A & S Heating and Air Conditioning</h1>
+  <a href="tel:+19735896304">(973) 589‑6304</a>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="blog.html">Articles</a>
+  <a href="contact.html">Contact</a>
+  <a href="booking.html">Book Online</a>
+</nav>
+
+<section class="hero">
+  <h2>HVAC Pricing & Cost Guide</h2>
+  <p>Transparent pricing for AC repair, heating repair, installation, and air quality services.</p>
+</section>
+
+<section class="section">
+  <h3>Instant HVAC Cost Calculator</h3>
+
+  <div class="calculator">
+    <select id="serviceType">
+      <option value="100">AC Repair – $100+</option>
+      <option value="250">AC Installation – $250+</option>
+      <option value="120">Heating Repair – $120+</option>
+      <option value="300">Furnace Installation – $300+</option>
+      <option value="80">Air Quality Service – $80+</option>
+    </select>
+
+    <button onclick="calculatePrice()">Calculate Price</button>
+    <div id="priceResult"></div>
+  </div>
+</section>
+
+<script>
+function calculatePrice() {
+  const price = document.getElementById("serviceType").value;
+  document.getElementById("priceResult").innerHTML = "Estimated Cost: $" + price;
+}
+</script>
+
+<section class="section">
+  <h3>Average HVAC Costs</h3>
+
+  <div class="content">
+    HVAC repair and installation costs vary depending on system type, age, and complexity.  
+    Below are typical price ranges for common services:
+  </div>
+
+  <ul class="content">
+    <li><strong>AC Repair:</strong> $100 – $450</li>
+    <li><strong>Heating Repair:</strong> $120 – $500</li>
+    <li><strong>Furnace Installation:</strong> $2,000 – $6,000</li>
+    <li><strong>AC Installation:</strong> $3,000 – $8,000</li>
+    <li><strong>Air Quality Systems:</strong> $80 – $600</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h3>Repair vs Replace</h3>
+
+  <div class="content">
+    Not sure whether to repair or replace your HVAC system?  
+    Here’s a simple guide:
+  </div>
+
+  <ul class="content">
+    <li><strong>Repair:</strong> If the system is under 10 years old and the repair cost is under 30% of replacement.</li>
+    <li><strong>Replace:</strong> If the system is over 12 years old or requires frequent repairs.</li>
+    <li><strong>Upgrade:</strong> If you want better efficiency, lower bills, or improved comfort.</li>
+  </ul>
+
+  <div class="cta-buttons">
+    <a href="tel:+19735896304">Call Now</a>
+    <a href="booking.html">Book Service</a>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> A & S Heating and Air Conditioning — Newark, NJ — (973) 589‑6304
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
