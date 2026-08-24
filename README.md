@@ -1,4 +1,4 @@
-# A & S Heating and Air Conditioning — Local Dev
+# Padilla's Heating & Cooling — Local Dev
 
 This repository contains a small static site and a minimal Express API that accepts booking requests and forwards them via Twilio, email, or writes to a local file.
 
@@ -17,7 +17,7 @@ npm start
 
 Notes:
 - The server will serve static files and provide POST `/api/book`.
-- The default company phone number is `COMPANY_PHONE` in `.env` (example: +19735896304).
+- The default company phone number is `COMPANY_PHONE` in `.env` (example: +19086722526).
 
 Security:
 - Keep API keys in `.env` and never commit them.

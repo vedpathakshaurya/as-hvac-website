@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 8000;
-const COMPANY_PHONE = process.env.COMPANY_PHONE || '+19735896304';
+const COMPANY_PHONE = process.env.COMPANY_PHONE || '+19086722526';
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname)));

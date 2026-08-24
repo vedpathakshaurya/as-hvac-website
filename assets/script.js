@@ -30,8 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     nav.id = 'main-navigation';
     toggle.addEventListener('click', () => {
-      const isOpen = document.body.classList.toggle('nav-open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      window.location.href = 'index.html';
     });
   }
 
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (isMobileDevice()) {
         e.preventDefault();
         const body = encodeURIComponent('Hello, I would like to book a service.');
-        window.location.href = 'sms:+19735896304?body=' + body;
+        window.location.href = 'sms:+19086722526?body=' + body;
       }
     });
   });
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Cross-device handlers: call, SMS, and desktop modal fallback
 (function () {
-  const PHONE_NUMBER = '+19735896304';
+  const PHONE_NUMBER = '+19086722526';
 
   function isMobileDevice() {
     return /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
@@ -209,7 +208,7 @@ function sendSMS() {
     'Details: ' + message;
 
   if (isMobileDevice()) {
-    window.location.href = 'sms:+19735896304?body=' + encodeURIComponent(bodyText);
+    window.location.href = 'sms:+19086722526?body=' + encodeURIComponent(bodyText);
     return;
   }
 
@@ -279,7 +278,7 @@ function copyRequest() {
 }
 
 function copyPhoneNumber() {
-  const phone = '+1 973 589 6304';
+  const phone = '+1 908 672 2526';
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(phone).then(() => {
       alert('Phone number copied to clipboard: ' + phone);
