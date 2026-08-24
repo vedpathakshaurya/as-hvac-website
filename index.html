@@ -2,220 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>A & S Heating and Air Conditioning | Newark, NJ</title>
+  <title>A &amp; S Heating and Air Conditioning | Newark, NJ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b5fa5'/%3E%3Ctext x='32' y='43' font-family='Arial, sans-serif' font-size='26' font-weight='bold' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E" />
   <meta name="description" content="Professional HVAC repair, installation, and maintenance in Newark, NJ. Call (973) 589‑6304 for fast service.">
 
+  <link rel="stylesheet" href="assets/style.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: #ffffff; color: #222; }
-
-    /* HEADER */
-    header {
-      padding: 20px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    header h1 { font-size: 26px; font-weight: bold; color: #0b5fa5; }
-    header a { color: #0b5fa5; font-weight: bold; text-decoration: none; }
-
-    nav {
-      display: flex;
-      gap: 20px;
-      padding: 15px 30px;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    nav a {
-      color: #444;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: bold;
-    }
-    nav a:hover { color: #0b5fa5; }
-
-    /* HERO */
     .hero {
-      background: url('https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      background-image: url('https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80');
       padding: 120px 20px;
-      text-align: center;
-      color: #fff;
-      background-blend-mode: darken;
-      background-color: rgba(0,0,0,0.4);
     }
-    .hero h2 {
-      font-size: 42px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 18px;
-      max-width: 650px;
-      margin: 0 auto;
-    }
-    .hero-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .hero-buttons a {
-      padding: 14px 28px;
-      background: #ffd54f;
-      color: #222;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    /* SECTION */
-    .section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .section h3 {
-      font-size: 28px;
-      color: #0b5fa5;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-
-    /* SERVICE CARDS */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-    .card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      border: 1px solid #e5e5e5;
-      transition: 0.2s;
-      text-align: center;
-    }
-    .card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transform: translateY(-3px);
-    }
-    .card img {
-      width: 60px;
-      margin-bottom: 15px;
-    }
-    .card h4 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #0b5fa5;
-    }
-    .card p {
-      color: #555;
-      line-height: 1.5;
-    }
-
-    /* PRICING PREVIEW */
-    .pricing-preview {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .pricing-preview a {
-      padding: 14px 28px;
-      background: #0b5fa5;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    /* BLOG PREVIEW */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-    .blog-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #e5e5e5;
-    }
-    .blog-card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-    .blog-card h4 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #0b5fa5;
-    }
-    .blog-card p {
-      color: #555;
-      line-height: 1.5;
-    }
-
-    /* BOOKING FORM */
-    .contact-form {
-      background: #f7f9fb;
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #e5e5e5;
-      max-width: 600px;
-      margin: auto;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-    .contact-form button {
-      width: 100%;
-      padding: 14px;
-      background: #0b5fa5;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #f7f9fb;
-      padding: 30px;
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #555;
-      border-top: 1px solid #e5e5e5;
-    }
+    .hero h2 { font-size: 42px; margin-bottom: 15px; }
+    .section h3 { margin-bottom: 25px; text-align: center; }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>A & S Heating and Air Conditioning</h1>
+  <h1>A &amp; S Heating and Air Conditioning</h1>
   <a href="tel:+19735896304">(973) 589‑6304</a>
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="pricing.html">Pricing</a>
   <a href="blog.html">Articles</a>
-  <a href="contact.html">Contact</a>
+  <a href="booking.html">Contact / Book</a>
   <a href="booking.html">Book Online</a>
 </nav>
+<main>
+
 
 <section class="hero">
   <h2>Your Trusted HVAC Experts in Newark, NJ</h2>
@@ -232,22 +51,22 @@
   <h3>Our Services</h3>
   <div class="services-grid">
     <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" />
-      <h4>AC Repair & Installation</h4>
+      <div class="icon-emoji" role="img" aria-label="AC repair icon">❄️</div>
+      <h4>AC Repair &amp; Installation</h4>
       <p>Expert diagnostics, fast repairs, and professional AC system installation.</p>
     </div>
     <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1684/1684390.png" />
-      <h4>Heating & Furnace Service</h4>
+      <div class="icon-emoji" role="img" aria-label="Heating and furnace service icon">🔥</div>
+      <h4>Heating &amp; Furnace Service</h4>
       <p>Boilers, furnaces, heat pumps — full repair and replacement services.</p>
     </div>
     <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1684/1684380.png" />
+      <div class="icon-emoji" role="img" aria-label="Emergency HVAC icon">🚨</div>
       <h4>Emergency HVAC</h4>
       <p>Priority service for no‑heat or no‑cool emergencies.</p>
     </div>
     <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1684/1684387.png" />
+      <div class="icon-emoji" role="img" aria-label="Air quality solutions icon">🌬️</div>
       <h4>Air Quality Solutions</h4>
       <p>Humidifiers, purifiers, filters, and duct cleaning for cleaner air.</p>
     </div>
@@ -255,7 +74,7 @@
 </section>
 
 <section class="section">
-  <h3>Pricing & Cost Guide</h3>
+  <h3>Pricing &amp; Cost Guide</h3>
   <div class="pricing-preview">
     <p>See average HVAC repair and installation costs.</p>
     <a href="pricing.html">View Pricing</a>
@@ -266,12 +85,12 @@
   <h3>Latest Articles</h3>
   <div class="blog-grid">
     <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" />
+      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Technician inspecting an air conditioning unit" />
       <h4>How to Know When Your AC Needs Repair</h4>
       <p>Learn the top signs that your air conditioner may be failing.</p>
     </div>
     <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=800&q=80" />
+      <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Air purifier improving indoor air quality" />
       <h4>Best Ways to Improve Indoor Air Quality</h4>
       <p>Discover how filters and purifiers can improve your home’s air.</p>
     </div>
@@ -285,40 +104,24 @@
 <section id="booking" class="section">
   <h3>Book Online</h3>
   <div class="contact-form">
-    <input type="text" id="name" placeholder="Your Name" />
-    <input type="text" id="phone" placeholder="Phone Number" />
-    <input type="text" id="address" placeholder="Address" />
-    <textarea id="message" placeholder="Describe your HVAC issue"></textarea>
+    <input type="text" id="name" placeholder="Your Name" aria-label="Your Name" required />
+    <input type="tel" id="phone" placeholder="Phone Number" aria-label="Phone Number" required />
+    <input type="text" id="address" placeholder="Address" aria-label="Address" required />
+    <textarea id="message" placeholder="Describe your HVAC issue" aria-label="Describe your HVAC issue"></textarea>
 
-    <button onclick="sendSMS()">Submit Request</button>
+    <button type="button" onclick="sendSMS()">Submit Request</button>
+    <button type="button" onclick="sendEmail()">Email Request</button>
+    <button type="button" onclick="copyRequest()">Copy Request</button>
   </div>
 </section>
 
-<script>
-function sendSMS() {
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const address = document.getElementById('address').value;
-  const message = document.getElementById('message').value;
-
-  const smsBody =
-    `New HVAC Request:%0A` +
-    `Name: ${name}%0A` +
-    `Phone: ${phone}%0A` +
-    `Address: ${address}%0A` +
-    `Issue: ${message}`;
-
-  window.location.href = `sms:+19735896304?body=${smsBody}`;
-}
-</script>
+</main>
 
 <footer>
-  &copy; <span id="year"></span> A & S Heating and Air Conditioning — Newark, NJ — (973) 589‑6304
+  &copy; <span id="year"></span> A &amp; S Heating and Air Conditioning — Newark, NJ — (973) 589‑6304
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script src="assets/script.js"></script>
 
 </body>
 </html>
